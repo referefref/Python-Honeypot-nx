@@ -3983,7 +3983,10 @@ while True:
                     except Exception:
                         pass
                     save_log(log_data)
-                    raise
+                    # a client that disconnects early must not stop the service
+                    if conn in active_sockets:
+                        active_sockets.remove(conn)
+                    conn.close()
                 except KeyboardInterrupt:
                     try:
                         log_data["content"] = response
