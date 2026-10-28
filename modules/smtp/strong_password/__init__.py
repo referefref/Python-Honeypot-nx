@@ -16,7 +16,7 @@ class ModuleProcessor:
 
     def __init__(self):
         self.kill_flag = False
-        self.log_filename = 'tmp/ohp_sssmtp_honeypot_logs.txt'
+        self.log_filename = 'tmp/ohp_smtp_honeypot_logs.txt'
         self.log_filename_dump = 'tmp/ohp_smtp_honeypot_logs.json'
 
     def processor(self):

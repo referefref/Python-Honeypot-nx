@@ -8,6 +8,8 @@ Changes from upstream:
 
 - Module Dockerfiles: `phusion/baseimage:master` no longer exists on Docker Hub, so the image builds failed and those modules never started. They now use `phusion/baseimage:focal-1.2.0` (Ubuntu 20.04, the base the other modules already use).
 - `requirements.txt`: PyYAML 5.4.1 no longer builds with current Cython, so PyYAML 6.0.2; Flask 2.0.1 is kept, with the Werkzeug, Jinja2, itsdangerous, click and MarkupSafe versions it was released with (newer ones cannot be imported by Flask 2.0.1).
+- `http/basic_auth_strong_password`: Apache logged the time as `[28/Oct/2026:06:37:00 +0000]`, which the Elasticsearch date field rejects; the error stopped the module's log processor, so no HTTP credentials were stored. Apache now logs `2026-10-28 06:37:00`, the format the other modules use.
+- `smtp/strong_password`: the log processor watched `ohp_sssmtp_honeypot_logs.txt` while the module writes `ohp_smtp_honeypot_logs.txt`, so SMTP credentials never reached the database. The file name is corrected.
 - `ics/veeder_root_guardian_ast`: the service was started with `python`, which the base image does not have, and mixed bytes and text under Python 3. It now runs with `python3`, with byte/text conversions only; commands and replies are unchanged. A client that disconnected while a reply was being sent stopped the service for good (the error was re-raised); the connection is now closed instead.
 
 Elasticsearch must be reachable at 127.0.0.1:9200 (see `config.py`). If it runs in Docker, give it host networking bound to 127.0.0.1 (or add its address to `ignore_real_machine_ip_addresses`), otherwise the traffic capture records the honeypot's own database traffic as network events.
