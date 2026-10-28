@@ -1,3 +1,21 @@
+# OWASP Honeypot (Python-Honeypot-nx)
+
+Adapted from https://github.com/OWASP/Python-Honeypot by Ali Razmjoo and the OWASP Honeypot contributors.
+
+This is a standalone copy of OWASP Honeypot (upstream commit 5482fdc, November 2023, Apache License 2.0) with only the changes needed for it to build and run again on a current Linux host (tested on Debian 12 with Python 3.11, Docker 20.10 and Elasticsearch 7.17, October 2026). Modules, ports, responses, logs and the API are unchanged.
+
+Changes from upstream:
+
+- Module Dockerfiles: `phusion/baseimage:master` no longer exists on Docker Hub, so the image builds failed and those modules never started. They now use `phusion/baseimage:focal-1.2.0` (Ubuntu 20.04, the base the other modules already use).
+- `requirements.txt`: PyYAML 5.4.1 no longer builds with current Cython, so PyYAML 6.0.2; Flask 2.0.1 is kept, with the Werkzeug, Jinja2, itsdangerous, click and MarkupSafe versions it was released with (newer ones cannot be imported by Flask 2.0.1).
+- `ics/veeder_root_guardian_ast`: the service was started with `python`, which the base image does not have, and mixed bytes and text under Python 3. It now runs with `python3`, with byte/text conversions only; commands and replies are unchanged.
+
+Elasticsearch must be reachable at 127.0.0.1:9200 (see `config.py`). If it runs in Docker, give it host networking bound to 127.0.0.1 (or add its address to `ignore_real_machine_ip_addresses`), otherwise the traffic capture records the honeypot's own database traffic as network events.
+
+The original README follows.
+
+---
+
 # OWASP Honeypot
 
 ![Build Status](https://github.com/OWASP/Python-Honeypot/workflows/CI/badge.svg?branch=master)

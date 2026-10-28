@@ -1,5 +1,5 @@
 # using phusion/baseimage as base image
-FROM phusion/baseimage:master
+FROM phusion/baseimage:focal-1.2.0
 
 # use baseimage-docker's init system.
 CMD ["/sbin/my_init"]

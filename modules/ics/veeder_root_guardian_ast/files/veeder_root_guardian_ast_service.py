@@ -81,7 +81,7 @@ def I10100():
             '\x01\r\nI10100\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'SYSTEM STATUS REPORT',
             '\r\n\r\n',
@@ -98,7 +98,7 @@ def I10200():
             '\x01\r\nI10200\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'SYSTEM CONFIGURATION',
             '\r\n\r\n',
@@ -203,7 +203,7 @@ def I11100():
             '\x01\r\nI11100\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'PRIORITY ALARM HISTORY\r\n',
             'ID  CATEGORY  DESCRIPTION          ALARM TYPE           STATE    DATE     TIME\r\n',
@@ -319,7 +319,7 @@ def I11200():
             '\x01\r\nI11200\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'NON-PRIORITY ALARM HISTORY\r\n',
             'ID  CATEGORY  DESCRIPTION          ALARM TYPE           STATE    DATE    TIME\r\n',
@@ -385,7 +385,7 @@ def I11300():
             '\x01\r\nI11300\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'ACTIVE ALARMS REPORT',
             '\r\n\r\n',
@@ -403,7 +403,7 @@ def I11400():
             '\x01\r\nI11400\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'CLEARED ALARMS REPORT',
             '\r\n\r\n',
@@ -475,7 +475,7 @@ def I20100():
             "\x01\r\nI20100\r\n",
             now(),
             "\r\n\r\n",
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             "\r\n\r\n",
             "IN-TANK INVENTORY       \r\n",
             "\r\n",
@@ -518,7 +518,7 @@ def I20200():
             '\x01\r\nI20200\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'DELIVERY REPORT',
             '\r\n\r\n',
@@ -1222,7 +1222,7 @@ def I20300():
             '\x01\r\nI20300\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'TANK 1    REGULAR                \r\n',
             '    TEST STATUS: OFF   \r\n',
@@ -1252,7 +1252,7 @@ def I20400():
             '\x01\r\nI20400\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             ' SHIFT REPORT \r\n\r\n',
             'SHIFT 1 TIME: 12:00 AM        \r\n\r\n',
@@ -1351,7 +1351,7 @@ def I20500():
             '\x01\r\nI20500\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'TANK   PRODUCT                 STATUS\r\n\r\n',
             '  1    REGULAR                 NORMAL\r\n\r\n',
@@ -1370,7 +1370,7 @@ def I20600():
             '\x01\r\nI20600\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n\r\n',
             'TANK ALARM HISTORY\r\n\r\n',
             'TANK 1  REGULAR             \r\n\r\n',
@@ -1435,7 +1435,7 @@ def I20700():
             '\x01\r\nI20700\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n\r\n',
             'TANK LEAK TEST HISTORY\r\n\r\n',
             'T 1:REGULAR\r\n\r\n',
@@ -1534,7 +1534,7 @@ def I20900():
             '\x01\r\nI20900\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'TANK 1    REGULAR                \r\n',
             '    TEST STATUS: OFF   \r\n',
@@ -1560,7 +1560,7 @@ def I20C00():
             '\x01\r\nI20C00\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'LAST DELIVERY REPORT\r\n\r\n',
             'T 1:REGULAR\r\n',
@@ -1607,7 +1607,7 @@ def I25100():
             '\x01\r\nI25100\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'CSLD TEST RESULTS\r\n',
             'TANK PRODUCT                RESULT\r\n',
@@ -1623,7 +1623,7 @@ def I30100():
             '\x01\r\nI30100\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'LIQUID STATUS REPORT\r\n\r\n',
             'SENSOR  LOCATION               STATUS\r\n',
@@ -1643,7 +1643,7 @@ def I30200():
             '\x01\r\nI30200\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'LIQUID ALARM HISTORY REPORT\r\n\r\n',
             'SENSOR  LOCATION\r\n',
@@ -3654,7 +3654,7 @@ def IA9100():
             '\x01\r\nIA9100\r\n',
             now(),
             '\r\n\r\n',
-            binascii.a2b_base64(os.environ.get("company_name_address")),
+            binascii.a2b_base64(os.environ.get("company_name_address")).decode("latin-1"),
             '\r\n\r\n',
             'POWER OUTAGE REPORT\r\n\r\n',
             'T 1:REGULAR             \r\n',
@@ -3795,7 +3795,7 @@ def S05300():
 
 
 def save_log(log_data):
-    log_connections = open(logs_filename, "ab")
+    log_connections = open(logs_filename, "a")
     log_connections.write(json.dumps(log_data) + "\n")
     log_connections.close()
 
@@ -3947,13 +3947,13 @@ while True:
                 print(addr[0], "connected")
                 try:
                     TIME = datetime.datetime.utcnow()
-                    response = conn.recv(4096)
+                    response = conn.recv(4096).decode("latin-1")
                     if not response:
                         active_sockets.remove(conn)
                         conn.close()
                         continue
                     while not ("\n" in response or "00" in response):
-                        response += conn.recv(4096)
+                        response += conn.recv(4096).decode("latin-1")
                     if response[0] != "\x01":
                         conn.close()
                         active_sockets.remove(conn)
@@ -3971,7 +3971,7 @@ while True:
                         log_data["valid_command"] = True
                         for data in commands[cmd]().rsplit("\r\n"):
                             data += "\r\n"
-                            conn.send(data)
+                            conn.send(data.encode("latin-1"))
                             time.sleep(random.choice(([0.01] * 10) + ([0.1] * 10) + ([1] * 3)))
                         print(addr[0], cmd, "responded")
                     log_data["content"] = response

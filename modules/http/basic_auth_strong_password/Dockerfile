@@ -1,5 +1,5 @@
 # using phusion/baseimage as base image
-FROM phusion/baseimage:master
+FROM phusion/baseimage:focal-1.2.0
 
 # update and install apache + python
 
